@@ -1,6 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weiling Oh | APAC Digital Ecosystem & Strategic Initiatives Business Leader</title>
+    <style>
+        :root {
+            --primary-color: #0f172a;       /* Deep Slate/Navy */
+            --secondary-color: #2563eb;     /* Professional Blue */
+            --accent-color: #3b82f6;        /* Light Accent Blue */
+            --text-dark: #1e293b;           /* Charcoal Body Text */
+            --text-light: #64748b;          /* Muted Text */
+            --bg-light: #f8fafc;            /* Clean Page Background */
+            --card-bg: #ffffff;             /* Card Background */
+            --border-color: #e2e8f0;        /* Subtle Border */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Section */
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 60px 0;
+            border-bottom: 4px solid var(--secondary-color);
+        }
+
+        .header-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .header-grid {
+                grid-template-columns: auto 1fr auto;
+            }
+        }
+
+        /* Profile Picture Styling */
+        .profile-img-container {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid var(--secondary-color);
+            overflow: hidden;
+            background-color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-info {
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .header-info {
+                text-align: left;
+            }
+        }
+
+        .header-info h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            margin-bottom: 5px;
+        }
+
+        .header-tagline {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            font-weight: 400;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.95rem;
+        }
+
+        @media (min-width: 768px) {
+            .contact-links {
+                justify-content: flex-start;
+            }
+        }
+
+        .contact-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .badge-certified {
+            background: rgba(37, 99, 235, 0.2);
+            border: 1px solid var(--secondary-color);
+            color: #93c5fd;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Executive Summary */
+        .summary-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            margin-top: -30px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .summary-text {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        /* Quick Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .stat-card {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .stat-num {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Core Layout Grid */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 992px) {
+            .main-layout {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        /* Experience Timeline */
+        .timeline-item {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .company-dates {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .job-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .bullet-list {
+            list-style-type: none;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .bullet-list li::before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        /* Sidebar Content */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 4px;
+            border: 1px solid var(--border-color);
+            font-weight: 500;
+        }
+
+        .edu-item, .cert-item {
+            margin-bottom: 15px;
+        }
+
+        .edu-title, .cert-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+        }
+
+        .edu-sub, .cert-sub {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Industry Leadership Section */
+        .leadership-item {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .leadership-item strong {
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container" style="padding-top: 0; padding-bottom: 0;">
+            <div class="header-grid">
+                <!-- Profile Image -->
+                <div class="profile-img-container">
+                    <!-- Replace 'profile.jpg' with the actual file name of your photo during deployment -->
+                    <img src="profile.jpg" alt="Weiling Oh Profile Photo">
+                </div>
+                
+                <!-- Header Info -->
+                <div class="header-info">
+                    <h1>Weiling Oh</h1>
+                    <div class="header-tagline">APAC Digital Ecosystem & Strategic Initiatives Business Leader</div>
+                    <div class="contact-links">
+                        <span>📍 Citizenship: Singapore</span>
+                        <a href="mailto:weilingz@gmail.com">✉️ weilingz@gmail.com</a>
+                        <a href="https://www.linkedin.com/in/weiling-oh-9a146422/" target="_blank">🔗 LinkedIn Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Top Certifications Badges -->
+                <div style="text-align: right;">
+                    <div class="badge-container" style="justify-content: flex-end; flex-direction: column; margin-top: 0;">
+                        <span class="badge-certified" style="text-align: center;">AWS AI Practitioner</span>
+                        <span class="badge-certified" style="text-align: center;">NTU Data Science & AI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Executive Summary Section -->
+        <section class="summary-section">
+            <p class="summary-text">
+                More than 26 years of experience leading global infrastructure investments, international sales/business development, strategic initiatives, and partnership engagements across APAC with P&L responsibility of up to $290M and 40+ staff across the region[cite: 3]. Proven track record scaling regional businesses and high-value ecosystem partnerships[cite: 3].
+            </p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-num">$290M</div>
+                    <div class="stat-label">Max P&L Managed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">26 Yrs</div>
+                    <div class="stat-label">Industry Leadership</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">$56M</div>
+                    <div class="stat-label">Int'l Connectivity Revenue</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">400+</div>
+                    <div class="stat-label">Global Roaming Partners</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Layout -->
+        <div class="main-layout">
+            
+            <!-- Left Column: Professional Experience -->
+            <div class="content-area">
+                <h2>Professional Experience</h2>
+
+                <div class="timeline-item">
+                    <div class="job-title">General Manager — Regional Development, Global Partnerships & 5G Enterprise Services</div>
+                    <div class="company-dates">
+                        <span>StarHub Singapore</span>
+                        <span>2024 — 2025</span>
+                    </div>
+                    <p class="job-desc">Led two global business units with $42M P&L, driving Roaming business and development of enterprise 5G solutions and ecosystem partnerships[cite: 3].</p>
+                    <ul class="bullet-list">
+                        <li>Grew new Enterprise 5G solutions (e.g., Network Slicing & Priority Data Services, 5G Edge UPF solutions) from less than $1M to $3M+ in 2024, serving Singapore government ministries and manufacturing companies[cite: 3].</li>
+                        <li>Led commercial development of GSMA API messaging initiatives through defining and executing industry engagement strategies across solution layers[cite: 3].</li>
+                        <li>Coordinated with international operators, standards bodies, and regulatory stakeholders to advance StarHub's participation in global digital frameworks for Messaging and IoT[cite: 3].</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-title">General Manager — International Business & Wholesale</div>
+                    <div class="company-dates">
+                        <span>StarHub Singapore</span>
+                        <span>2018 — 2023</span>
+                    </div>
+                    <p class="job-desc">Head of International business unit with total P&L responsibility of $290M and 5 direct teams of 40+ headcounts[cite: 3].</p>
+                    <ul class="bullet-list">
+                        <li>Managed diverse portfolio: International & domestic connectivity, Subsea investments, Cable Landing Stations, SDWAN, Internet, Data Centers, SMS, IDD, Voice, and Mobile Roaming[cite: 3].</li>
+                        <li>Led multi-party ecosystem initiatives with 5G and technology partners to align joint go-to-market (GTM) strategies and policy positions with government agencies[cite: 3].</li>
+                        <li>Structured and closed strategic partnerships ($8M–$19M) with tech giants including Google, Microsoft, and ByteDance[cite: 3].</li>
+                        <li>Grew international connectivity revenue from $32M to $56M over 5 years via complex in-country initiatives and regional stakeholder alignment[cite: 3].</li>
+                        <li>Concurrently led StarHub Consumer/Enterprise mobile roaming business ($130M+/annum), negotiating 400+ bilateral roaming contracts worldwide[cite: 3].</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-title">Senior Director & Head — International Data Product and Network Strategy</div>
+                    <div class="company-dates">
+                        <span>StarHub Singapore</span>
+                        <span>2013 — 2018</span>
+                    </div>
+                    <p class="job-desc">Led a team of 11 across International Connectivity, Internet, Backhaul, Cable Landing Stations, and resell partnerships with $60M revenue and $20M procurement budget[cite: 3].</p>
+                    <ul class="bullet-list">
+                        <li>Drove cross-functional product roadmap development across commercial, engineering, legal, and regulatory teams to secure board-approved investment cases for US$80M subsea cable infrastructure[cite: 3].</li>
+                        <li>Developed and executed GTM and ecosystem engagement strategies aligned with StarHub digital infrastructure priorities across regional operators and government stakeholders[cite: 3].</li>
+                        <li>Developed International partnership frameworks with regional providers across APAC to deliver complex cross-market regulatory, commercial, and technical coordination[cite: 3].</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-title">Director — International Data Products</div>
+                    <div class="company-dates">
+                        <span>StarHub Singapore</span>
+                        <span>2009 — 2013</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Led GTM strategies for IPLC, Backhaul, international infrastructure services, and global partnerships on Voice, Data, Web & Video Conferencing, and Media solutions with a team of 7[cite: 3].</li>
+                        <li>Developed international sourcing strategies to optimize P&L and enhance product offerings[cite: 3].</li>
+                        <li>Launched Managed CPE services with a 3-year strategic partnership with Dimension Data (2009)[cite: 3].</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-title">Product Management & Strategy Roles</div>
+                    <div class="company-dates">
+                        <span>StarHub Singapore</span>
+                        <span>1999 — 2009</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li><strong>Senior Product Manager, IPVPN Products (2006~2009):</strong> Spearheaded strategic technology transformation on domestic MPLS / IPVPN strategy and business[cite: 3].</li>
+                        <li><strong>Product Manager, IP Products (2003~2006):</strong> Developed and executed StarHub IP Peering and GTM strategy to increase Internet performance[cite: 3].</li>
+                        <li><strong>Senior Product Executive, ADSL Products (2001~2003):</strong> Drove growth for ADSL Internet services in enterprise/SME market from less than 100 to 4000+ customers over 2 years[cite: 3].</li>
+                        <li><strong>Product Executive, Domestic Products (1999~2001):</strong> Pioneered and launched domestic data services after full telco license award[cite: 3].</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-title">Regulatory Engineer</div>
+                    <div class="company-dates">
+                        <span>Asia Pacific Mobile Telecommunications</span>
+                        <span>1998 — 1999</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Managed international satellite spectrum and regulatory negotiations with global satellite carriers[cite: 3].</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column: Sidebar (Skills, Education, Certifications) -->
+            <div class="sidebar">
+                
+                <div class="sidebar-widget">
+                    <h2>Core Expertise</h2>
+                    <div style="margin-top: 15px;">
+                        <span class="skill-tag">P&L Management</span>
+                        <span class="skill-tag">Global Partnerships</span>
+                        <span class="skill-tag">5G Enterprise Solutions</span>
+                        <span class="skill-tag">Subsea Infrastructure</span>
+                        <span class="skill-tag">Data Centres</span>
+                        <span class="skill-tag">International Strategy</span>
+                        <span class="skill-tag">Deal Structuring</span>
+                        <span class="skill-tag">Regulatory Navigation</span>
+                        <span class="skill-tag">Mobile Roaming</span>
+                        <span class="skill-tag">APAC Market Expansion</span>
+                        <span class="skill-tag">AI & Data Science</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h2>Industry Leadership</h2>
+                    <div class="leadership-item">
+                        <strong>IMDA Advisory Committee:</strong> Represented StarHub on the Singapore-Chongqing G2G International Data Corridor (IDC) initiative, advising on cross-border digital infrastructure policy and 5G frameworks at the inter-ministerial level[cite: 3].
+                    </div>
+                    <div class="leadership-item">
+                        <strong>GSMA Open Gateway:</strong> Led participation in GSMA API standards initiative, aligning with international operators on responsible digital frameworks[cite: 3].
+                    </div>
+                    <div class="leadership-item">
+                        <strong>Global Convenings:</strong> Institutional delegate at GSMA World Congress, PTC, ITW, Submarine Networks World, WAS, APRICOT, and Data Centre World[cite: 3].
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h2>Education</h2>
+                    <div class="edu-item">
+                        <div class="edu-title">Master of Business Administration (MBA)</div>
+                        <div class="edu-sub">University of Manchester, UK (2009)<br><em>Awarded MBA Scholarship</em>[cite: 3]</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-title">Bachelor of Engineering (Electrical & Electronics)</div>
+                        <div class="edu-sub">Nanyang Technological University (1998)<br>Major in Communications Engineering<br>Minor in Marketing[cite: 3]</div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h2>Credentials & AI</h2>
+                    <div class="cert-item">
+                        <div class="cert-title">Advanced Professional Certificate in AI & Data Science</div>
+                        <div class="cert-sub">Nanyang Technological University (2026)[cite: 3]</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">AWS Certified AI Practitioner</div>
+                        <div class="cert-sub">Amazon Web Services (April 2026)[cite: 3]</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Generative AI Certificate</div>
+                        <div class="cert-sub">National University of Singapore (2025)[cite: 3]</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Generative AI Apps Design & Prompt Engineering</div>
+                        <div class="cert-sub">Singapore Management University (2025)[cite: 3]</div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h2>Languages</h2>
+                    <div style="font-size: 0.95rem;">
+                        👉 <strong>English:</strong> Fluent[cite: 3]<br>
+                        👉 <strong>Chinese / Mandarin:</strong> Fluent[cite: 3]<br>
+                        👉 <strong>Japanese:</strong> Daily Conversational[cite: 3]
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Weiling Oh. All Rights Reserved. Managed Executive Portfolio Webpage.</p>
+        </footer>
+    </main>
+
+</body>
+</html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weiling Oh - Personal Website</title>
